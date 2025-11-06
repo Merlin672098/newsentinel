@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:newsentinel/interfaceadapters/conductor_main.dart';
 import 'package:newsentinel/interfaceadapters/admin_main.dart';
 
-
 class VerificacionRolWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class VerificacionRolWidget extends StatelessWidget {
           }
           if (snapshot.hasData) {
             var data = snapshot.data!.data() as Map<String, dynamic>?;
-
+            print('Datos del usuario: $data');
             if (data != null && data['role'] != null) {
               String rol = data['role'];
 
@@ -40,7 +39,8 @@ class VerificacionRolWidget extends StatelessWidget {
                 return const EstudianteMain();
               } else if (rol == 'admin') {
                 return const EstudianteMain();
-              }*/ else {
+              }*/
+              else {
                 return Text('Rol desconocido: $rol');
               }
             } else {
@@ -48,7 +48,8 @@ class VerificacionRolWidget extends StatelessWidget {
                   'Campo "rol" no encontrado en los datos del usuario');
             }
           } else {
-            return const Text('Usuario no encontrado en la colección "jasyd"');
+            return const Text('Usuario no encontrado en la colección ');
+
           }
         },
       );

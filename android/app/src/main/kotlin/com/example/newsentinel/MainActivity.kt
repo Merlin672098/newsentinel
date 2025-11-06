@@ -1,4 +1,4 @@
-package com.example.newsentinel
+package com.example.sentinel
 
 import io.flutter.embedding.android.FlutterActivity
 

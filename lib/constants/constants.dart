@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-String uri = 'http://192.168.180.197:3000';
-String uri2 = 'ws://192.168.180.197:3000';
+String uri = 'http://192.168.0.18:3000';
+String uri2 = 'ws://192.168.0.18:3000';
 
 var defaultBackgroundColor = Color.fromARGB(255, 255, 255, 255);
 var appBarColor = Colors.grey[900];

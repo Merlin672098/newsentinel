@@ -41,30 +41,32 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB-X1Nc2rLdB5WALn7_4NFbRdCX6EvyxqE',
-    appId: '1:617067569331:web:0622837c32d6005b10d0c6',
-    messagingSenderId: '617067569331',
-    projectId: 'track-9f980',
-    authDomain: 'track-9f980.firebaseapp.com',
-    storageBucket: 'track-9f980.appspot.com',
+    apiKey: 'AIzaSyDnDpUq4G2gUdqlfayVwtSBDTO57HMmHAY',
+    appId: '1:961518837039:web:03da4abbe7d07f12c315da',
+    messagingSenderId: '961518837039',
+    projectId: 'sentinel-a5191',
+    authDomain: 'sentinel-a5191.firebaseapp.com',
+    databaseURL: 'https://sentinel-a5191-default-rtdb.firebaseio.com',
+    storageBucket: 'sentinel-a5191.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBPZGBXhtLs3A03hONYhGwF9TmsxTQuoio',
-    appId: '1:617067569331:android:9767af2c01729faf10d0c6',
-    messagingSenderId: '617067569331',
-    projectId: 'track-9f980',
-    storageBucket: 'track-9f980.appspot.com',
+    apiKey: 'AIzaSyAUX7-lALkIRAnYXckII1K-lsClkYG3f2U',
+    appId: '1:961518837039:android:f7312c326cc6a85fc315da',
+    messagingSenderId: '961518837039',
+    projectId: 'sentinel-a5191',
+    databaseURL: 'https://sentinel-a5191-default-rtdb.firebaseio.com',
+    storageBucket: 'sentinel-a5191.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCXnjx_LxU3hZtQHAPzUCxTUZalTZTuDEY',
-    appId: '1:617067569331:ios:6daa418ac354d4a810d0c6',
-    messagingSenderId: '617067569331',
-    projectId: 'track-9f980',
-    storageBucket: 'track-9f980.appspot.com',
-    androidClientId: '617067569331-6j5svo9cpb7o6lpdq3unocjvb97pcrpd.apps.googleusercontent.com',
-    iosClientId: '617067569331-2aph255p4a5omtf4kpd4tkpq83ehsrp7.apps.googleusercontent.com',
+    apiKey: 'AIzaSyB_5RvnUp5Xr_2xL0ACKKRExY3VMZFLCuQ',
+    appId: '1:961518837039:ios:9bbabf266792c747c315da',
+    messagingSenderId: '961518837039',
+    projectId: 'sentinel-a5191',
+    databaseURL: 'https://sentinel-a5191-default-rtdb.firebaseio.com',
+    storageBucket: 'sentinel-a5191.firebasestorage.app',
+    iosClientId: '961518837039-2dt4qsm24i84bour9srfqp98hhs0cmkf.apps.googleusercontent.com',
     iosBundleId: 'com.example.newsentinel',
   );
 

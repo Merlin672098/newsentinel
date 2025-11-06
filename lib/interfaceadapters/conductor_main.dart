@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:newsentinel/interfaceadapters/gateways/login_service.dart';
 import 'package:newsentinel/interfaceadapters/provider/user.dart';
+import 'package:newsentinel/interfaceadapters/views/conductor/QRScreen.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/amigos_screen.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/dispositivo_screen.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/documentos_legales.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/inicio.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/mapa_viaje.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/perfil_screen.dart';
+import 'package:newsentinel/interfaceadapters/views/conductor/ubicacion.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/vehiculos_screen.dart';
 import 'package:newsentinel/interfaceadapters/views/conductor/viajes_screen.dart';
 import '../../constants/global_variables.dart';
@@ -210,8 +212,23 @@ class _ConductorMainState extends State<ConductorMain> {
                   ),
                 ),
                 onTap: () {
-                  /*updatePage(5);
-                  Navigator.pop(context);*/
+                  updatePage(5);
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.payment,
+                    color: GlobalVariables.primaryColor),
+                title: const Text(
+                  'Dispositivozzz',
+                  style: TextStyle(
+                    color: GlobalVariables.primaryColor,
+                    fontSize: 16,
+                  ),
+                ),
+                onTap: () {
+                  updatePage(6);
+                  Navigator.pop(context);
                 },
               ),
               ListTile(
@@ -261,7 +278,8 @@ class _ConductorMainState extends State<ConductorMain> {
           DocumentosLegalesScreen(), // updatePage(8)
           //DispositivosScreen(),
           //Pantalla de dispositivos
-           // updatePage(9)
+         // QrScannerTab(),
+          Sepuedebanda(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(

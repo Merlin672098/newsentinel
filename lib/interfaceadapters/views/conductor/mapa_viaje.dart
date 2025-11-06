@@ -10,6 +10,8 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:newsentinel/constants/global_variables.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MapaViaje extends StatefulWidget {
   @override
@@ -35,27 +37,35 @@ LatLng ubicacionActual = LatLng(-21.531417296871105, -64.73361248624106);
   }
 
 
- Future<void> _fetchUbicacionActual() async {
-    final url = 'https://api.thinger.io/v3/users/limbert/devices/A9G/resources/gps?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjY4NjkzMzQsImlhdCI6MTcyNjg2MjEzNCwicm9sZSI6InVzZXIiLCJ1c3IiOiJsaW1iZXJ0In0.YJq-SdIBsI1UumzxtV7wv3Xhzj19DTVYRqUzVHBZ9z0';
-
-    try {
-      final response = await http.get(Uri.parse(url));
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        double latitude = data['latitude'];
-        double longitude = data['longitude'];
-
-        setState(() {
-          ubicacionActual = LatLng(latitude, longitude);
-        });
-      } else {
-        print('Error en la solicitud: ${response.statusCode}');
-      }
-    } catch (e) {
-      print('Error: $e');
+Future<void> _fetchUbicacionActual() async {
+  try {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      print('Usuario no autenticado.');
+      return;
     }
+
+    final docSnapshot = await FirebaseFirestore.instance
+        .collection('location')
+        .doc(user.uid)
+        .get();
+
+    if (docSnapshot.exists) {
+      final data = docSnapshot.data();
+      double latitude = data?['latitude'];
+      double longitude = data?['longitude'];
+
+      setState(() {
+        ubicacionActual = LatLng(latitude, longitude);
+      });
+    } else {
+      print('No se encontró la ubicación del usuario.');
+    }
+  } catch (e) {
+    print('Error obteniendo ubicación desde Firestore: $e');
   }
+}
+
   Future<void> _createCustomMarker() async {
     // Cargar las imágenes, en este caso el marcador base y la imagen cargada
     final ui.PictureRecorder pictureRecorder = ui.PictureRecorder();
