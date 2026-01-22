@@ -6,18 +6,26 @@ class GlobalVariables {
   // COLORS
   static const appBarGradient = LinearGradient(
     colors: [
-      Color.fromARGB(255, 245, 229, 0),
+      Color.fromARGB(255, 20, 91, 197),
       Color.fromARGB(255, 0, 32, 31),
     ],
     stops: [0.5, 1.0],
   );
 
-  static const primaryColor = Color.fromARGB(255, 179, 140, 0);
-  static const secondaryColor = Color.fromARGB(255, 0, 0, 0);
-  static const meBackgroundColor = Color.fromARGB(255, 255, 255, 255);
-  static const Color greyBackgroundCOlor = Color.fromARGB(255, 255, 255, 255);
-  static var selectedNavBarColor = Colors.white;
-  static const unselectedNavBarColor = Colors.white;
+  // Azul principal Apple-style
+  static const primaryColor = Color.fromARGB(255, 10, 132, 255); // #0A84FF
+  static const secondaryColor = Color.fromARGB(255, 0, 0, 0); // #000000
+  static const meBackgroundColor = Color.fromARGB(255, 242, 242, 247); // #F2F2F7
+  static const Color greyBackgroundCOlor = Color.fromARGB(255, 255, 255, 255); // #1C1C1E
+  static var selectedNavBarColor = Color.fromARGB(255, 10, 132, 255); // #0A84FF
+  static const unselectedNavBarColor = Color.fromRGBO(247, 247, 247, 1); // rgba(...)
+
+
+  
+
+
+
+
 
   // STATIC IMAGES
   static const List<String> carouselImages = [

@@ -50,7 +50,7 @@ dev_dependencies:
   google_maps_flutter_web: ^0.5.4+3
   #API
   web_socket_channel: ^2.4.5
-  onesignal_flutter: ^5.2.5
+  onesignal_flutter: ^5.2.8
   image: ^4.2.0
   http: ^1.2.2
   shared_preferences: ^2.3.2
@@ -59,8 +59,11 @@ dev_dependencies:
   permission_handler: ^11.3.1
 
   google_mlkit_barcode_scanning: ^0.12.0
- # qr_code_scanner: ^1.0.1
+  #qr_code_scanner: ^1.0.1
+  mobile_scanner: ^3.0.0             # reemplaza qr_code_scanner
+
   image_picker: ^1.1.2
+
 
   flutter_lints: ^4.0.0
   #flutter_blue: ^0.8.0
